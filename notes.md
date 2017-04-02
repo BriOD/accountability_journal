@@ -1,0 +1,4 @@
+-User has a journal.
+-User creates daily activities (exercising, meditating, reading, deep work)
+-Journal has many entries.
+-Entries comment daily on individual users activities. completed or not, how long doing activity, notes on that days activity.
