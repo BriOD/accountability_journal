@@ -2,3 +2,9 @@
 -User creates daily activities (exercising, meditating, reading, deep work)
 -Journal has many entries.
 -Entries comment daily on individual users activities. completed or not, how long doing activity, notes on that days activity.
+-I'm thinking I need a journal that has a name.
+-Then entries that belong to a journal. But the entries are just checkmarks on preexisting things that the user has set up.
+-So i would want a user to sign up, be asked what daily activities they want to be held accountable for. that would create a users daily_activities.
+-A daily_activity model would have a name, boolean of true or false for that day, and a notes
+-How would you then regenerate a individual users daily_activities.
+-Maybe it would just be part of the user model...
