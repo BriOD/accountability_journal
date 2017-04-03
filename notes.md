@@ -8,3 +8,10 @@
 -A daily_activity model would have a name, boolean of true or false for that day, and a notes
 -How would you then regenerate a individual users daily_activities.
 -Maybe it would just be part of the user model...
+-A user creates their own daily_activities, daily_activities have a name and description. A user has a journal. A journal has many entries. An entry is a checkbox for each of the current user's daily activities, and for how long, and any additional notes.
+-might make a instance method to handle creating a new instance of an entry
+-Have a model for Events. A user creates their events, it has a name, duration.
+-A user creates their Event. An event has a name. An Event has many entries. An Entry has name which is event_name_entry, a duration, date, and a note, and belongs to one Journal and one User. A Journal has belongs to a User, and has a name, and has many entries.
+
+-"rails g model Journal user:references name" (creates association, creates index, helps with queries, best for inner joins)
+-dependent: :destroy
