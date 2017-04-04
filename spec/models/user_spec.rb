@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it "has a vaild user factory"
+  it "has a vaild user factory" do
+    expect(build(:user)).to be_valid
+  end
 
   it "is valid with a name, email, and password_digest"
 
