@@ -18,7 +18,14 @@ end
 
   end
 
-  it "is only vaild when a password length is a minimum of 8 characters"
+  it "is only vaild when a password length is a minimum of 8 characters" do
+    expect(build(:user, password: "123")).not_to be_valid
+    expect(build(:user, password: "12345678")).to be_valid
+  end
 
-  it "encrypts the password upon saving"
+  it "encrypts the password upon saving" do
+    user = build(:user)
+    user.save
+    expect(user.password_digest).not_to eq(user.password)
+  end
 end
