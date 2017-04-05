@@ -15,7 +15,6 @@ end
 
   it "is invalid without a password" do
     expect(build(:user, password_digest: nil )).not_to be_valid
-
   end
 
   it "is only vaild when a password length is a minimum of 8 characters" do
@@ -23,9 +22,17 @@ end
     expect(build(:user, password: "12345678")).to be_valid
   end
 
+  it "requires a unique email" do
+    create(:user, email: "bri@gmail.com")
+    user = build(:user, email: "bri@gmail.com")
+    user.valid?
+    expect(user.errors.full_messages).to include("Email has already been taken")
+  end
+
   it "encrypts the password upon saving" do
     user = build(:user)
     user.save
+    expect(user.password_digest).to be_truthy
     expect(user.password_digest).not_to eq(user.password)
   end
 end
