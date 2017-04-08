@@ -23,9 +23,10 @@ end
   end
 
   it "requires a unique email" do
-    create(:user, email: "bri@gmail.com")
-    user = build(:user, email: "bri@gmail.com")
+    create(:user, email: "bri@aol.com")
+    user = build(:user, email: "bri@aol.com")
     user.valid?
+    # binding.pry
     expect(user.errors.full_messages).to include("Email has already been taken")
   end
 
