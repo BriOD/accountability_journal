@@ -18,6 +18,20 @@ RSpec.describe Journal, type: :model do
       journal.save
       expect(journal).to be_valid
     end
+  end
 
+  describe "relationships" do
+
+    it "belongs to a user" do
+      user = User.first
+      journal = build(:journal)
+      journal.user = user
+      # binding.pry
+      expect(journal.user).to eq(user)
+    end
+
+    it "has many entries"
+
+    it "has many entry_activities"
   end
 end
