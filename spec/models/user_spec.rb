@@ -36,4 +36,19 @@ end
     expect(user.password_digest).to be_truthy
     expect(user.password_digest).not_to eq(user.password)
   end
+
+  describe 'relationships' do
+
+    it 'has one journal that is destroyed upon deletion of user' do
+      user = create(:user)
+      journal = user.create_journal(name: 'my journal')
+
+      expect(user.journal.id).not_to eq(nil)
+
+      user.destroy
+      journal = Journal.find_by(id: journal.id)
+
+      expect(journal).to eq(nil)
+    end
+  end
 end
