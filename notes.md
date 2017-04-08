@@ -1,4 +1,31 @@
--User has a journal.
+-User
+  -name
+  -email
+  -password
+  -has a journal
+  -has many activities
+  -has many entries through journal
+
+-Journal
+  -name
+  -belongs to a user
+  -has many entires
+
+-Entry
+  -belongs to a user through journal
+  <!-- I need to figure out how to customize an entry to cater to its user. accepts_nested_attributes might be the way to do this. so might need to build another model, user_activities. can i give an option to select which daily activities were completed. for might say here's all your activities, select which ones you accomplished yesterday. -->
+  -has many activities through users...
+  -completed, dependent on activities
+  -duration, dependent on activities
+  -notes
+
+
+-Activity
+  -name
+  -daily goal for activity
+  -belongs to a user
+  -belongs to entry through user
+
 -User creates daily activities (exercising, meditating, reading, deep work)
 -Journal has many entries.
 -Entries comment daily on individual users activities. completed or not, how long doing activity, notes on that days activity.
