@@ -52,5 +52,7 @@ end
 
       expect(journal).to eq(nil)
     end
+
+    it "has many daily_activities"
   end
 end

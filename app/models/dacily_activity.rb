@@ -1,0 +1,2 @@
+class DacilyActivity < ApplicationRecord
+end

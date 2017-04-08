@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408223423) do
+ActiveRecord::Schema.define(version: 20170408234420) do
+
+  create_table "dacily_activities", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "journals", force: :cascade do |t|
     t.string   "name"
