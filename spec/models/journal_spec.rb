@@ -34,6 +34,6 @@ RSpec.describe Journal, type: :model do
 
     it "has many entries"
 
-    it "has many entry_activities"
+    it "has many entry_activities through entry"
   end
 end
