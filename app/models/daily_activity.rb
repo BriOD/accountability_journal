@@ -1,0 +1,2 @@
+class DailyActivity < ApplicationRecord
+end

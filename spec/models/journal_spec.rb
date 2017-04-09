@@ -12,21 +12,23 @@ RSpec.describe Journal, type: :model do
     end
 
     it "has a vaild name" do
+      user = User.create(name: "bri", email: "me@fi.com", password: "password")
       journal = build(:journal)
-      user = create(:user)
       journal.user = user
       journal.save
       expect(journal).to be_valid
+
     end
   end
 
   describe "relationships" do
 
     it "belongs to a user" do
-      user = User.first
+      user = User.create(name: "bri", email: "me@me.com", password: "password")
       journal = build(:journal)
       journal.user = user
       # binding.pry
+      journal.save
       expect(journal.user).to eq(user)
     end
 

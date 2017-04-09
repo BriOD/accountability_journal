@@ -1,5 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe ActivityAccount, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "validations" do
+    it "requires a daily_activity, completion, duration"
+
+    it "optional to add notes"
+
+  end
+
+  describe "relationships" do
+    it "belongs to an entry"
+
+    
+
+  end
 end
