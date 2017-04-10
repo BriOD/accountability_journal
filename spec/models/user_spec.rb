@@ -53,6 +53,18 @@ end
       expect(journal).to eq(nil)
     end
 
-    it "has many daily_activities"
+    it "has many daily_activities" do
+      user = create(:user, email: "brian@aol.com")
+      activity1 = build(:daily_activity)
+      activity2 = build(:daily_activity)
+      activity1.user = user
+      activity2.user = user
+      activity1.save
+      activity2.save
+
+      expect(user.daily_activities.first).to eq(activity1)
+      expect(user.daily_activities.last).to eq(activity2)
+
+    end
   end
 end

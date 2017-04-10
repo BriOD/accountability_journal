@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
-  has_many :daily_activity
+  has_many :daily_activities
   has_one :journal, dependent: :destroy
 
 

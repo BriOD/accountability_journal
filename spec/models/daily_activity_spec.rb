@@ -8,7 +8,7 @@ RSpec.describe DailyActivity, type: :model do
 
       expect(daily_activity.valid?).to eq(false)
       expect(daily_activity.errors.full_messages).to eq([
-        "User must exist",  
+        "User must exist",
         "Name can't be blank",
         "Description can't be blank",
       ])
@@ -20,9 +20,11 @@ RSpec.describe DailyActivity, type: :model do
   describe "relationships" do
     it "belongs to a user" do
       # user = User.create(name: "b", email: "we@we.com", password: "password")
-
-      d_a = create(:daily_activity)
-      expect(d_a.user.name).to eq("Brian O'D")
+      user = create(:user, email: "brian2@aol.com")
+      d_a = build(:daily_activity)
+      d_a.user = user
+      d_a.save
+      expect(d_a.user).to eq(user)
 
     end
 
