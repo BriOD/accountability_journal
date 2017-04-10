@@ -32,8 +32,37 @@ RSpec.describe Journal, type: :model do
       expect(journal.user).to eq(user)
     end
 
-    it "has many entries"
+    it "has many entries" do
 
-    it "has many entry_activities through entry"
+      journal = create(:journal)
+      entry1 = create(:entry)
+      entry2 = create(:entry)
+      entry1.journal = journal
+      entry1.save
+      entry2.journal = journal
+      entry2.save
+
+      expect(journal.entries.first).to eq(entry1)
+      expect(journal.entries.last).to eq(entry2)
+    end
+
+    it "has many entry_activities through entry" do
+      user = User.create(name: "bri", email: "you@me.com", password: "password")
+      journal = create(:journal)
+      journal.user = user
+      entry = create(:entry)
+      entry.journal = journal
+      entry.save
+      aa1 = create(:activity_account)
+      aa2 = create(:activity_account)
+      aa1.entry = entry
+      aa1.save
+      aa2.entry = entry
+      aa2.save
+      # binding.pry
+
+      expect(journal.entries.first.activity_accounts.first).to eq(aa1)
+      expect(journal.entries.first.activity_accounts.last).to eq(aa2)
+    end
   end
 end
