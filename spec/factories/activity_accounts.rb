@@ -4,5 +4,6 @@ FactoryGirl.define do
     completion true
     duration "20 min."
     notes "helped me focus for the day"
+
   end
 end
