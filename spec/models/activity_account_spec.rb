@@ -28,7 +28,11 @@ RSpec.describe ActivityAccount, type: :model do
 
   describe "relationships" do
     it "belongs to an entry" do
+      entry = create(:entry)
       activity_account = create(:activity_account)
+      activity_account.entry = entry
+
+      expect(activity_account.entry).to eq(entry)
 
     end
 
