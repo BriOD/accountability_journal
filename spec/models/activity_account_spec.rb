@@ -17,12 +17,20 @@ RSpec.describe ActivityAccount, type: :model do
       ])
     end
 
-    it "optional to add notes"
+    it "optional to add notes" do
+      activity_account = build(:activity_account)
+      activity_account.notes = nil
+
+      expect(activity_account.valid?).to eq(true)
+    end
 
   end
 
   describe "relationships" do
-    it "belongs to an entry"
+    it "belongs to an entry" do
+      activity_account = create(:activity_account)
+
+    end
 
 
 
