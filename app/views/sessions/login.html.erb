@@ -1,0 +1,12 @@
+<h1>hello world</h1>
+
+<%= form_for @user, url: create_session_path do |f| %>
+
+  <%= f.label :email %>
+  <%= f.text_area :email %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit "Sign In" %>
+
+<% end %>
