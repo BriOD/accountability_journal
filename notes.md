@@ -42,3 +42,4 @@
 
 -"rails g model Journal user:references name" (creates association, creates index, helps with queries, best for inner joins)
 -dependent: :destroy
+-probably want entry to be nested under journal, and user to be alone
