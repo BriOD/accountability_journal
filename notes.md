@@ -43,3 +43,4 @@
 -"rails g model Journal user:references name" (creates association, creates index, helps with queries, best for inner joins)
 -dependent: :destroy
 -probably want entry to be nested under journal, and user to be alone
+-When a user signs up, they get redirected to 'journal/new' and are instructed to create a Journal. Once they create a Journal they are redirected to 'user/show' where they are shown their Accountability Activities, an option to create more Activities, their last entry with an option to see previous entries, a button to create a new entry, which will redirect them to 'entry/new' where they can create a new entry, and a DailyAccount, on submit the new entry will be appended to the DOM, and the option to to keep adding DailyAccounts will still be there. 
