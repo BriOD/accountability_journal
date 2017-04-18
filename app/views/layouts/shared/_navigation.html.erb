@@ -6,7 +6,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <%= link_to "AJ", root_path, :class => "navbar-brand" %>
+    <%= link_to "Accountability Journal", root_path, :class => "navbar-brand" %>
   </div>
   <!-- /.navbar-header -->
 
@@ -18,7 +18,18 @@
 
         <%#= render 'layouts/shared/nav/search' %>
         <li>
+          <% if current_user %>
+          <h5 class="form-control">Welcome <%= current_user.name %></h5>
+          <% end %>
+        </li>
+        <li>
           <%= link_to "Sign In!", login_path %>
+        </li>
+        <li>
+          <%= link_to "Logout", logout_path, method: "destroy" %>
+        </li>
+        <li>
+          <%= link_to "Create an Account", user_signup_path %>
         </li>
         <%#= render 'layouts/shared/nav/main' %>
       </ul>

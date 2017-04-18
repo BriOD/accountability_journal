@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   # user login and registration
   root 'sessions#login'
 
-  resources :users
+  resources :users, only: [:show]
 
   get '/signup', to: "users#signup", as: 'user_signup'
   post '/users', to: "users#create", as: 'create_user'
   get '/login', to: "sessions#login", as: 'login'
   post '/login', to: "sessions#create", as: "create_session"
-  delete '/logout', to: "sessions#destroy", as: "logout"
+  get '/logout', to: "sessions#destroy", as: "logout"
 end

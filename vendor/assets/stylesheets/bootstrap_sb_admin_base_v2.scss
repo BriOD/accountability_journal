@@ -4,3 +4,9 @@
 @import "morris/*";
 @import "sb-admin-2/*";
 @import "timeline/*";
+
+.field_with_errors {
+  @extend .has-error;
+    .form-control {
+    }
+}
