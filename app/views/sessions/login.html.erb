@@ -2,18 +2,34 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-12">
-        <h1 class="page_header"> Hello World</h1>
+        <h1 class="page_header"> Sign In</h1>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-lg-6">
+                  <%= form_for(@user, url: create_session_path, role: "form")  do |f| %>
+                  <div class="form-group">
+                    <%= f.label :email %>
+                    <%= f.text_field :email, class: "form-control" %>
+                    <%= f.label :password %>
+                    <%= f.password_field :password, class: "form-control" %>
+                    <p class="help-block">Enter your email and password to sign in.</p>
+                    <%= f.submit "Sign In", class: "btn btn-default"%>
+                  </div>
+                  <% end %>
 
-          <%= form_for @user, url: create_session_path do |f| %>
-
-          <%= f.label :email %>
-          <%= f.text_area :email %>
-          <%= f.label :password %>
-          <%= f.password_field :password %>
-
-          <%= f.submit "Sign In" %>
-          <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </div>
+</div>
