@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # user login and registration
   root 'sessions#login'
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :daily_activities, only: [:new, :create]
+  end
   resources :journals, only: [:new, :create, :show]
 
   get '/signup', to: "users#signup", as: 'user_signup'
