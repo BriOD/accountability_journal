@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   # user login and registration
   root 'sessions#login'
 
-  resources :users, only: [:show] do
-    resources :daily_activities, only: [:new, :create]
-  end
+  resources :users, only: [:show]
+  resources :daily_activities, only: [:new, :create]
   resources :journals, only: [:new, :create, :show]
 
   get '/signup', to: "users#signup", as: 'user_signup'
