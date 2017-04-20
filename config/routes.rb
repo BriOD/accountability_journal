@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'sessions#login'
 
   resources :users, only: [:show]
-  resources :daily_activities, only: [:new, :create]
+  resources :daily_activities, only: [:new, :create, :show]
   resources :journals, only: [:new, :create, :show]
 
   get '/signup', to: "users#signup", as: 'user_signup'
