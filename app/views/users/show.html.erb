@@ -3,6 +3,30 @@
     <div class="row">
       <div class="col-lg-12">
         <h1 class="page_header"> <h1>hello <%= @user.name %></h1>
+        <div class="col-lg-12">
+          <% if @user.daily_activities %>
+            <% @user.daily_activities.each do |activity| %>
+            <div class="col-lg-3 col-md-6">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col-xs-3">
+                      <i class="fa fa-tasks fa-3x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                      <div class="huge"><%= activity.name %></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-footer">
+                  <span class="pull-left"><%= activity.description %></span>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
