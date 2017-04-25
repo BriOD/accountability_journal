@@ -7,7 +7,7 @@ class DailyActivitiesController < ApplicationController
     # raise params.inspect
     activity = current_user.daily_activities.build(daily_activity_params)
     if activity.save
-      redirect_to daily_activity_path(activity)
+      redirect_to user_path(current_user)
     else
       redirect_to new_daily_activity_path
     end
