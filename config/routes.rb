@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   resources :daily_activities, only: [:new, :create, :show]
-  resources :journals, only: [:new, :create, :show]
+  resources :journals, only: [:new, :create, :show] do
+    resources :entries, only: [:new, :create, :show]
+  end
 
   get '/signup', to: "users#signup", as: 'user_signup'
   post '/users', to: "users#create", as: 'create_user'

@@ -4,6 +4,22 @@
     <div class="row">
       <div class="col-lg-12">
         <h1 class="page_header"> <h1><%= @journal.name %></h1>
+        <div class="col-lg-6">
+          <%= form_for([@journal, @journal.entries.build], role: "form")  do |f| %>
+          <div class="form-group">
+            <%= f.label :date %>
+            <%= f.text_field :date, value: Time.now.strftime("%A, %b %d"), class: "form-control" %>
+            <% if @journal.errors[:date].any? %>
+            <p class="help-block-error"><%= @journal.errors.full_messages_for(:date).to_sentence %></p>
+            <% else %>
+            <p class="help-block">This will create a new entry in your journal.</p>
+            <% end %>
+          </div>
+
+          <%= f.submit "Create Entry", class: "btn btn-default"%>
+          <% end %>
+
+        </div>
       </div>
     </div>
   </div>

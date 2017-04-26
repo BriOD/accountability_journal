@@ -47,4 +47,5 @@
 -I want to create a method in the Entry model that generates a certain number of activity accounts, the number of daily_activities that a user has.
 
 TODO:
-[] 
+[] Be able to create an entry with daily activity accounts being shown
+[] Display a user's journal with all the entries 
