@@ -45,7 +45,10 @@
 -When a user signs up, they get redirected to 'journal/new' and are instructed to create a Journal. Once they create a Journal they are redirected to 'user/show' where they are shown their Accountability Activities, an option to create more Activities, their last entry with an option to see previous entries, a button to create a new entry, which will redirect them to 'entry/new' where they can create a new entry, and a DailyAccount, on submit the new entry will be appended to the DOM, and the option to to keep adding DailyAccounts will still be there.
 -OK i can't figure out why error messages won't show up but i'm moving past it. It seems that the field with errors won't show up when there's an error
 -I want to create a method in the Entry model that generates a certain number of activity accounts, the number of daily_activities that a user has.
+-might want a method 'add_entry_to_journal'. We want to be able to create a complete entry, with all of it's completed daily_activities.
 
 TODO:
 [] Be able to create an entry with daily activity accounts being shown
-[] Display a user's journal with all the entries 
+  -on entry show page, have form to create a new DailyActivity.
+[] add more daily_activities to an entry via AJAX  
+[] Display a user's journal with all the entries
