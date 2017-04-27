@@ -17,20 +17,22 @@
       <ul class="nav" id="side-menu">
 
         <%#= render 'layouts/shared/nav/search' %>
+      <% if current_user %>
         <li>
-          <% if current_user %>
-          <h5 class="form-control">Welcome <%= current_user.name %></h5>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to "Sign In!", login_path %>
+           <%= link_to "Your Homepage", user_path(current_user) %>
         </li>
         <li>
           <%= link_to "Logout", logout_path, method: "destroy" %>
         </li>
+      <% else %>
+        <li>
+          <%= link_to "Sign In", login_path %>
+        </li>
         <li>
           <%= link_to "Create an Account", user_signup_path %>
         </li>
+        <% end %>
+
         <%#= render 'layouts/shared/nav/main' %>
       </ul>
     </div>

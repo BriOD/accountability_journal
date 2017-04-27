@@ -31,7 +31,10 @@
       </div>
     </div>
   </div>
-  <p class="">
+  <p>
     <%= link_to "Create a Daily Activity", new_daily_activity_path, class: "btn btn-default" %>
+  </p>
+  <p>
+    <%= link_to "My Journal", journal_path(current_user.journal), class: "btn btn-default" %>
   </p>
 </div>

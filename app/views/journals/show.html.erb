@@ -5,6 +5,15 @@
       <div class="col-lg-12">
         <h1 class="page_header"> <h1><%= @journal.name %></h1>
         <div class="col-lg-6">
+          <% if @journal.entries %>
+
+            <% @journal.entries.each do |entry| %>
+              <p> <%= link_to "#{entry.date}", entry_path(entry) %> </p>
+            <% end %>
+          <% end %>
+
+        </div>
+        <div class="col-lg-6">
           <%= form_for([@journal, @journal.entries.build], role: "form")  do |f| %>
           <div class="form-group">
             <%= f.label :date %>

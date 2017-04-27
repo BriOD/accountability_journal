@@ -21,12 +21,6 @@
   </head>
 
   <body>
-<!--
-  <% if current_user %>
-    Signed in as <%= current_user.name %> | <%= link_to "Logout", logout_path, method: "delete" %>
-  <% else %>
-    <%= link_to 'Login', create_session_path %> | <%= link_to 'Signup', user_signup_path %>
-  <% end %>-->
   <div id="wrapper">
       <%= render 'layouts/shared/navigation' %>
       <%= yield %>
