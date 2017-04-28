@@ -49,6 +49,7 @@
 
 TODO:
 [] Be able to create an entry with daily activity accounts being shown
-  -on entry show page, have form to create a new DailyActivity.
+[x] on entry show page, have form to create a new DailyActivity.
+    [] make the form correct, need a boolean option for completeion, and need options from collection for daily_activity
 [] add more daily_activities to an entry via AJAX  
 [] Display a user's journal with all the entries

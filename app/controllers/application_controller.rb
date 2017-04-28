@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_user
+  helper_method :users_daily_activities
 
 
   def current_user
@@ -14,5 +15,11 @@ class ApplicationController < ActionController::Base
 
   def authorize
     redirect_to '/login' unless current_user
+  end
+
+  def users_daily_activities
+    current_user.daily_activities.collect do |activity|
+       activity.name
+     end
   end
 end
