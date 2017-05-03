@@ -48,8 +48,13 @@
 -might want a method 'add_entry_to_journal'. We want to be able to create a complete entry, with all of it's completed daily_activities.
 
 TODO:
-[] Be able to create an entry with daily activity accounts being shown
+[x] Be able to create an entry with daily activity accounts being shown
 [x] on entry show page, have form to create a new DailyActivity.
-    [] make the form correct, need a boolean option for completeion, and need options from collection for daily_activity
+    [x] make the form correct, need a boolean option for completeion, and need options from collection for daily_activity
+[] Make proper flow of actions. Static home page, when new user signs up, they create daily activities, and a journal.
+[] On Users show page display their journal, with all of it's entries dates as links to the that entry show page    
 [] add more daily_activities to an entry via AJAX  
 [] Display a user's journal with all the entries
+
+
+-How do i render a form that is on a show page, not on a new page?

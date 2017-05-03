@@ -6,7 +6,7 @@ class ActivityAccountsController < ApplicationController
     if @activity_account.save
       redirect_to entry_path(@entry)
     else
-      render :entry_path
+      redirect_to entry_path(@entry)
     end
   end
 

@@ -8,9 +8,9 @@ class EntriesController < ApplicationController
     @journal = current_user.journal
     @entry = @journal.entries.build(entry_params)
     if @entry.save
-      redirect_to journal_entry_path(@journal, @entry)
+      redirect_to entry_path(@entry)
     else
-      render :new
+      redirect_to journal_path(@journal)
     end
   end
 
