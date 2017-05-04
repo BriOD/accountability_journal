@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   helper_method :users_daily_activities
 
 
+
+
   def current_user
     @current_user ||= User.find_by_id(session[:user_id]) unless session[:user_id] == nil
   end

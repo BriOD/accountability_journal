@@ -2,9 +2,11 @@ Rails.application.routes.draw do
 
 
 
+  get 'static/welcome'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # user login and registration
-  root 'sessions#login'
+  root 'static#welcome'
 
   resources :users, only: [:show]
   resources :daily_activities, only: [:new, :create, :show]
