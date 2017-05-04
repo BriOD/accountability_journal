@@ -8,9 +8,9 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Successfully Signed up!"
-      redirect_to root_path
+      redirect_to new_journal_path
     else
-      flash[:error] = "Unsuccessful Signed up. Please try again."
+      flash[:error] = "Unsuccessful Sign up. Please try again."
       render 'users/signup'
     end
   end

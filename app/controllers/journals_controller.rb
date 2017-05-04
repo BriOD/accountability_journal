@@ -6,7 +6,7 @@ class JournalsController < ApplicationController
   def create
     journal = current_user.build_journal(journal_params)
     if journal.save
-      redirect_to journal_path(journal)
+      redirect_to new_daily_activity_path
     else
       redirect_to new_journal_path
     end

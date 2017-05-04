@@ -55,6 +55,9 @@ TODO:
 [] On Users show page display their journal, with all of it's entries dates as links to the that entry show page    
 [] add more daily_activities to an entry via AJAX  
 [] Display a user's journal with all the entries
+[] Be able to create more than one Daily_activity upon creating an account.
+[] Don't want empty notes to have a heading for notes. implementing handlebars might just fix this for me.
+
 
 
 -How do i render a form that is on a show page, not on a new page?

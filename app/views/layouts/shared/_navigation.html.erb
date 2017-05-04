@@ -22,13 +22,15 @@
            <%= link_to "Your Homepage", user_path(current_user) %>
         </li>
         <li>
-          <%= link_to "Logout", logout_path, method: "destroy" %>
+          <%= link_to "Logout", logout_path %>
         </li>
         <li>
           <%= link_to "Create a Daily Activity", new_daily_activity_path %>
         </li>
         <li>
-          <%= link_to "My Journal", journal_path(current_user.journal) %>
+          <%# if current_user.journal.exists? %>
+          <%#= link_to "My Journal", journal_path(current_user.journal) %>
+          <%# end %>
         </li>
       <% else %>
         <li>
