@@ -58,3 +58,5 @@ TODO:
 
 
 -How do i render a form that is on a show page, not on a new page?
+-How to make options_from_collection_for_select default option be blank?
+  -answer might be something like: render "posts/show" or whatever
