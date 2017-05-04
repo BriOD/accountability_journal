@@ -6,11 +6,12 @@ $(function(){
     url = this.action
 
     data = {
-      'auth_token' : $("input[name='authenticity_token']").value(),
+      'auth_token' : $("input[name='authenticity_token']").val(),
       'activity_account' : {
-        
+
       }
     }
+    // 22 min mark in video
     // 2. need form data
 
     e.preventDefault();
