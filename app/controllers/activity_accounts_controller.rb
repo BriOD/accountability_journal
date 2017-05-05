@@ -4,7 +4,10 @@ class ActivityAccountsController < ApplicationController
     @entry = Entry.find_by_id(params[:entry_id])
     @activity_account = @entry.activity_accounts.build(activity_params)
     if @activity_account.save
-      redirect_to entry_path(@entry)
+      respond_to do |f|
+        f.json {render :json => @activity_account}
+        f.html {redirect_to entry_path(@entry)}
+      end
     else
       redirect_to entry_path(@entry)
     end
