@@ -22,7 +22,10 @@
               <p><h5>Activity: <%= activity.daily_activity %></p></h5>
               <p><h5>Completed: <%= activity.completion %></p></h5>
               <p><h5>Duration: <%= activity.duration %></p></h5>
+              <% if activity.notes != ""%>
               <p><h5>notes: <%= activity.notes %></p></h5>
+              <% end %>
+
             </div>
 
             <% end %>

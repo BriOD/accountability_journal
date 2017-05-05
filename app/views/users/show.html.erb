@@ -14,7 +14,9 @@
           <% end %>
         </div>
       </div>
+      <% if current_user.journal != nil %>
       <%= link_to "My Journal", journal_path(current_user.journal), class: "btn btn-default" %>
+      <% end %>
 
     </div>
   </div>

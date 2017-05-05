@@ -27,11 +27,11 @@
         <li>
           <%= link_to "Create a Daily Activity", new_daily_activity_path %>
         </li>
-        <li>
-          <%# if current_user.journal.exists? %>
+        <!-- <li>
+          <% if current_user.journal != nil %>
           <%#= link_to "My Journal", journal_path(current_user.journal) %>
-          <%# end %>
-        </li>
+          <% end %>
+        </li> -->
       <% else %>
         <li>
           <%= link_to "Sign In", login_path %>
