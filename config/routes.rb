@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :daily_activities, only: [:new, :create, :show]
 
-  resources :journals, only: [:new, :create, :show] do
+  resources :journals, only: [:new, :create, :show, :index] do
     resources :entries, only: [:new, :create, :show], shallow: true do
       resources :activity_accounts, only: [:new, :create]
     end

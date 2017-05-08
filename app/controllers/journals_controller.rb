@@ -1,4 +1,9 @@
 class JournalsController < ApplicationController
+
+  def index
+    @journals = Journal.all
+  end
+  
   def new
     @journal = current_user.build_journal
   end
