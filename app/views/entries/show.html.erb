@@ -24,6 +24,7 @@
         </div>
       </div>
 
+    <% if @entry.user == current_user %>
 
       <div class="col-lg-6"> <h5><span>Add an activity to this entry:</span> </h5>
         <%= form_for([@entry, @entry.activity_accounts.build], role: "form")  do |f| %>
@@ -51,6 +52,7 @@
         <%= f.submit "Add Account to this Entry", class: "btn btn-default"%>
         <% end %>
       </div>
+      <% end %>
     </div> <!-- class row -->
   </div> <!-- class container-fluid -->
 </div> <!-- id page-wrapper -->
