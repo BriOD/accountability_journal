@@ -51,10 +51,10 @@ TODO:
 [x] Be able to create an entry with daily activity accounts being shown
 [x] on entry show page, have form to create a new DailyActivity.
     [x] make the form correct, need a boolean option for completeion, and need options from collection for daily_activity
-[] Make proper flow of actions. Static home page, when new user signs up, they create daily activities, and a journal.
+[x] Make proper flow of actions. Static home page, when new user signs up, they create daily activities, and a journal.
 [] On Users show page display their journal, with all of it's entries dates as links to the that entry show page    
-[] add more daily_activities to an entry via AJAX  
-[] Display a user's journal with all the entries
+[] add more activity_account to an entry via AJAX  
+[x] Display a user's journal with all the entries
 [] Be able to create more than one Daily_activity upon creating an account.
 [] Don't want empty notes to have a heading for notes. implementing handlebars might just fix this for me.
 

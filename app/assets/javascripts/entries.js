@@ -25,19 +25,33 @@ $(function(){
     var $form = $(this);
     var action = $form.attr("action");
     var params = $form.serialize();
+    // debugger;
     $.ajax({
       url: action,
       data: params,
-      dataType: "json",
+      dataType: "JSON",
       method: "POST"
     })
     .success(function(json){
       var account = new Account(json);
       var accountDiv = account.renderDiv()
+      var $completionField = $("#activity_account_completion")
+      var $durationField = $("#activity_account_duration")
+      var $notesField = $("#activity_account_notes")
+      // debugger
+
       $("#activities-div").append(accountDiv)
+      $completionField.val("")
+      $durationField.val("")
+      $notesField.val("")
+
     })
     .error(function(response){
       console.log("Broke?", response)
     })
   })
 })
+
+// Prombelms i want to address:
+// 1. content-type should be json, not html
+// 2. why does the page freeze, and form fields are still occupied?
