@@ -20,12 +20,21 @@ Account.prototype.renderDiv = function(){
 
 
 $(function(){
+  $("[data-disable-with]").removeAttr("data-disable-with");
+  // Rails 5 issue where it automatically locks the submit button. Had to override that.
   $("form#new_activity_account").on("submit", function(e){
     e.preventDefault()
     var $form = $(this);
     var action = $form.attr("action");
     var params = $form.serialize();
     // debugger;
+
+    // fetch(url, {
+    //
+    // })
+    //   .then(res => res.json())
+    //   .then(data => console.log(data))
+    //   .catch(err => console.log(err))
     $.ajax({
       url: action,
       data: params,
