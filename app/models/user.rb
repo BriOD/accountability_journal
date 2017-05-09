@@ -8,4 +8,8 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :password, length: { minimum: 8 }
 
+  def entries
+    self.journal.entries
+  end
+
 end

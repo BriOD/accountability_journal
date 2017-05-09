@@ -22,6 +22,14 @@ class EntriesController < ApplicationController
     end
   end
 
+  def next
+    @entry = Entry.find_by_id(params[:id])
+    @next_entry = @entry.next
+
+  end
+
+  end
+
   private
 
   def entry_params

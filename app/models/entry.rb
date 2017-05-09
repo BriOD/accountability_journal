@@ -4,4 +4,10 @@ class Entry < ApplicationRecord
   has_many :activity_accounts
 
   validates :date, presence: true
+
+
+def next
+  user.entries.where("id > ?", id).first
+end
+
 end
