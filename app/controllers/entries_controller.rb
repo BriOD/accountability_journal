@@ -16,6 +16,10 @@ class EntriesController < ApplicationController
 
   def show
     @entry = Entry.find_by_id(params[:id])
+    respond_to do |f|
+      f.html {render :show}
+      f.json {render json: @entry}
+    end
   end
 
   private

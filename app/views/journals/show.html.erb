@@ -4,16 +4,27 @@
     <div class="row">
       <div class="col-lg-12">
         <h1 class="page_header"> <h1><%= @journal.name %></h1>
-        <div class="col-lg-6">
-          <% if @journal.entries %>
-
-            <% @journal.entries.each do |entry| %>
-              <p> <%= link_to "#{entry.date}", entry_path(entry) %> </p>
-            <% end %>
-          <% end %>
+        <div class="col-lg-6"> <h3>Previous Entries:</h3>
+          <%# if @journal.entries %>
+            <%# @journal.entries.each do |entry| %>
+            <!-- <ul> -->
+              <!-- <li> <%#= link_to "#{entry.date}", entry_path(entry) %> </li> -->
+            <!-- </ul> -->
+            <%# end %>
+          <%# end %>
+          <a href="#" class="js-more" data-id="<%=@entry.id + 1%> ">Show Past Entries</a>
 
         </div>
+
+
+
+
+
         <div class="col-lg-6">
+        </div>
+
+
+        <div class="col-lg-12">
           <% if @journal.user == current_user %>
 
           <%= form_for([@journal, @journal.entries.build], role: "form")  do |f| %>

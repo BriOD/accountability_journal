@@ -14,7 +14,11 @@ class DailyActivitiesController < ApplicationController
   end
 
   def show
-    @activity = DailyActivity.find_by_id(params[:id])
+    @avtivity = DailyActivity.find_by_id(params[:id])
+    respond_to do |f|
+      f.html {render :show}
+      f.json {render json: @activity}
+    end
   end
 
   private

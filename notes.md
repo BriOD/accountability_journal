@@ -52,11 +52,14 @@ TODO:
 [x] on entry show page, have form to create a new DailyActivity.
     [x] make the form correct, need a boolean option for completeion, and need options from collection for daily_activity
 [x] Make proper flow of actions. Static home page, when new user signs up, they create daily activities, and a journal.
-[] On Users show page display their journal, with all of it's entries dates as links to the that entry show page    
-[] add more activity_account to an entry via AJAX  
+[x] On Users show page display their journal, with all of it's entries dates as links to the that entry show page    
+[x] add more activity_account to an entry via AJAX  
 [x] Display a user's journal with all the entries
 [] Be able to create more than one Daily_activity upon creating an account.
-[] Don't want empty notes to have a heading for notes. implementing handlebars might just fix this for me.
+[] When getting the "next" of whatever, the problem is that it is based on the id. If we want to get the next entry for a user, the current entry might be 5, and the users next entry might have an id of 12.
+[] Generating the view for the next entry is also difficult because it's not as simple as replacing one piece of data with another. We have to replace a collection of things with a different collection.
+[] Instead of displaying all the entries on the users show page, have a bttn that says "show entries" and then use jQuerry the fetch all those entries and add them to the DOM.
+
 
 
 

@@ -3,7 +3,7 @@ class JournalsController < ApplicationController
   def index
     @journals = Journal.all
   end
-  
+
   def new
     @journal = current_user.build_journal
   end
@@ -19,6 +19,10 @@ class JournalsController < ApplicationController
 
   def show
     @journal = Journal.find_by_id(params[:id])
+    respond_to do |f|
+      f.html {render :show}
+      f.json {render json: @journal}
+    end
   end
 
   private
