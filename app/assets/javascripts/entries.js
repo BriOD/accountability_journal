@@ -59,34 +59,39 @@ $(function(){
   })
 })
 
-// $(function(){
-//   $("#js-next").on("click", function(e){
-//     e.preventDefault()
-//     $.ajax({
-//       method: "GET",
-//       url: '/entries/15.json'// I want to url for the next entry
-//     })
-//     .done(function(data){
-//       var date = data.date;
-//       var accounts = data.activity_accounts;
-//
-//       $(".panel-body").html("") //clear the activities div
-//       accounts.forEach(function(acc){
-//         //here is where i want to create an account div for each acc, and then append it to the activites div
-//         var account = new Account(acc); //I don't like that i have to create a new object, this shouldn't be necessary
-//         var accountDiv = account.renderDiv()
-//         $("#activities-div").append(accountDiv)
-//         // there's now 4 emty divs taking up white space, they are the empty divs from the previous entry
-//       })
-//       $("#date").html(date)
-//
-//       // The data is an instance of an entry. I want to redraw the DOM to reflect the info of this entry
-//       //I will need to select the date and replace it.
-//       //I will also need to itterate through the activity_accounts of the new entry, and create an activity div
-//       //for every activity-account this entry has.
-//     });
-//   })
-// })
+$(function(){
+  $("#js-next").on("click", function(e){
+    e.preventDefault()
+    var url = this.href
+    $.ajax({
+      method: "GET",
+      url: url// I want to url for the next entry
+    })
+    .done(function(data){
+      var date = data.date;
+      var accounts = data.activity_accounts;
+      var entryId = data.id
+// debugger
+      $("#activities-div").html("") //clear the activities div
+      accounts.forEach(function(acc){
+        //here is where i want to create an account div for each acc, and then append it to the activites div
+        var account = new Account(acc); //I don't like that i have to create a new object, this shouldn't be necessary
+        var accountDiv = account.renderDiv()
+        $("#activities-div").append(accountDiv)
+        // there's now 4 emty divs taking up white space, they are the empty divs from the previous entry
+      })
+      $("#date").html(date)
+
+      //I have to redraw the href so that is has the correct id
+      $("#js-next").attr("href", "/entries/"+ entryId + "/next")
+
+      // The data is an instance of an entry. I want to redraw the DOM to reflect the info of this entry
+      //I will need to select the date and replace it.
+      //I will also need to itterate through the activity_accounts of the new entry, and create an activity div
+      //for every activity-account this entry has.
+    });
+  })
+})
 
 
 // Prombelms i want to address:

@@ -26,7 +26,8 @@
 
 
         </div>
-        <a href="#" class= "pull-right" id="js-next" data-id="<%= @entry.id %>">Next Entry</a>
+        <%= link_to "Next Entry", entry_next_path(@entry), id: "js-next" %>
+        <!-- <a href="#" class= "pull-right" id="js-next" data-id="<%= @entry.id %>">Next Entry</a> -->
       </div>
 
     <% if @entry.user == current_user %>

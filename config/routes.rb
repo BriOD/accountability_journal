@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # user login and registration
   root 'static#welcome'
 
+
+
   resources :users, only: [:show]
   resources :daily_activities, only: [:new, :create, :show]
 
@@ -16,6 +18,8 @@ Rails.application.routes.draw do
       resources :activity_accounts, only: [:new, :create]
     end
   end
+
+  get '/entries/:id/next', to: "entries#next", as: 'entry_next'
 
   get '/signup', to: "users#signup", as: 'user_signup'
   post '/users', to: "users#create", as: 'create_user'
