@@ -25,10 +25,9 @@ class EntriesController < ApplicationController
   def next
     @entry = Entry.find_by_id(params[:id])
     @next_entry = @entry.next
-
+    render json: @next_entry
   end
-
-  end
+  
 
   private
 
