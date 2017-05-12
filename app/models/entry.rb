@@ -9,11 +9,11 @@ class Entry < ApplicationRecord
 def next
   entry = user.entries.where("id > ?", id).first
 
-  # if entry
-  #   entry
-  # else
-  #   user.entries.first
-  # end
+  if entry
+    entry
+  else
+    user.entries.first
+  end
 
 end
 
