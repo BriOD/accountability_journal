@@ -4,7 +4,6 @@ function Account(attributes) {
   this.duration = attributes.duration;
   this.notes = attributes.notes;
   this.id = attributes.id;
-
 }
 
 $(function(){
@@ -26,14 +25,7 @@ $(function(){
     var $form = $(this);
     var action = $form.attr("action");
     var params = $form.serialize();
-    // debugger;
 
-    // fetch(url, {
-    //
-    // })
-    //   .then(res => res.json())
-    //   .then(data => console.log(data))
-    //   .catch(err => console.log(err))
     $.ajax({
       url: action,
       data: params,
@@ -94,6 +86,8 @@ $(function(){
 })
 
 
+
+//
 // Prombelms i want to address:
 // 1. content-type should be json, not html
 // 2. why does the page freeze, and form fields are still occupied?

@@ -1,4 +1,11 @@
 class EntriesController < ApplicationController
+
+
+  def index
+    @entries = current_user.entries
+  end
+
+
   def new
     @journal = current_user.journal
     @entry = @journal.entries.build
@@ -27,7 +34,7 @@ class EntriesController < ApplicationController
     @next_entry = @entry.next
     render json: @next_entry
   end
-  
+
 
   private
 

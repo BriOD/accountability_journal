@@ -3,10 +3,13 @@
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
 
+
+
 # Add additional assets to the asset load path
-Rails.application.config.assets.paths << "vendor/assets/fonts"
-Rails.application.config.assets.paths << "vendor/assets/images"
+# Rails.application.config.assets.paths << "vendor/assets/fonts"
+# Rails.application.config.assets.paths << "vendor/assets/images"
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-Rails.application.config.assets.precompile += %w( vendor/assets/fonts vendor/assets/images )
+# Rails.application.config.assets.precompile += %w( vendor/assets/fonts vendor/assets/images )
+Rails.application.config.assets.precompile += %w( journals.js entries.js daily_activities.js static.js sessions.js users.js)

@@ -56,9 +56,13 @@ TODO:
 [x] add more activity_account to an entry via AJAX  
 [x] Display a user's journal with all the entries
 [] Be able to create more than one Daily_activity upon creating an account.
-[] When getting the "next" of whatever, the problem is that it is based on the id. If we want to get the next entry for a user, the current entry might be 5, and the users next entry might have an id of 12.
-[] Generating the view for the next entry is also difficult because it's not as simple as replacing one piece of data with another. We have to replace a collection of things with a different collection.
+[x] When getting the "next" of whatever, the problem is that it is based on the id. If we want to get the next entry for a user, the current entry might be 5, and the users next entry might have an id of 12.
+[x] Generating the view for the next entry is also difficult because it's not as simple as replacing one piece of data with another. We have to replace a collection of things with a different collection.
 [] Instead of displaying all the entries on the users show page, have a bttn that says "show entries" and then use jQuerry the fetch all those entries and add them to the DOM.
+[x] Figure out why i get Handlebars error on all other pages other than entries. How do I limit the JS in entries.js to just the entry show page?
+    -this was an issue of page specific JS loading on all pages. To fix this I added "<%= javascript_include_tag params[:controller] %>" to application.html.erb in layouts folder. In config/initilaizers/assets.rb I had to add: "Rails.application.config.assets.precompile += %w( journals.js )" for every JS file i need loaded. I also had take out the "require_tree ." in application.js
+
+
 
 
 
