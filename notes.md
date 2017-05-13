@@ -61,12 +61,5 @@ TODO:
 [] Instead of displaying all the entries on the users show page, have a bttn that says "show entries" and then use jQuerry the fetch all those entries and add them to the DOM.
 [x] Figure out why i get Handlebars error on all other pages other than entries. How do I limit the JS in entries.js to just the entry show page?
     -this was an issue of page specific JS loading on all pages. To fix this I added "<%= javascript_include_tag params[:controller] %>" to application.html.erb in layouts folder. In config/initilaizers/assets.rb I had to add: "Rails.application.config.assets.precompile += %w( journals.js )" for every JS file i need loaded. I also had take out the "require_tree ." in application.js
-
-
-
-
-
-
--How do i render a form that is on a show page, not on a new page?
--How to make options_from_collection_for_select default option be blank?
-  -answer might be something like: render "posts/show" or whatever
+[] the collection of user.entries seems to be returning all entries, at least when rendering all a users entries on their journal show page
+  -nevermind. i was looking at someone elses journal, but still logged in as myself, so it was showing current_users entries 

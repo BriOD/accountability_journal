@@ -3,6 +3,7 @@ class EntriesController < ApplicationController
 
   def index
     @entries = current_user.entries
+    # binding.pry
     render json: @entries
   end
 

@@ -55,6 +55,7 @@ $(function(){
   $("#js-next").on("click", function(e){
     e.preventDefault()
     var url = this.href
+    // debugger
     $.ajax({
       method: "GET",
       url: url// I want to url for the next entry
@@ -63,6 +64,9 @@ $(function(){
       var date = data.date;
       var accounts = data.activity_accounts;
       var entryId = data.id
+      history.pushState(null, null, entryId)
+      // set the correct params for the entry being shown
+
 // debugger
       $("#activities-div").html("") //clear the activities div
       accounts.forEach(function(acc){
