@@ -65,5 +65,5 @@ TODO:
   -nevermind. i was looking at someone elses journal, but still logged in as myself, so it was showing current_users entries
 [] Create a delete route for activity_accounts on entries, and jQuerrify it
 [] Organize code in entry.js
-[] Create README.md file
+[x] Create README.md file
 [] Create a footer for the whole app
