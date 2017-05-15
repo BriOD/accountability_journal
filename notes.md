@@ -61,9 +61,10 @@ TODO:
 [x] Instead of displaying all the entries on the users show page, have a bttn that says "show entries" and then use jQuerry the fetch all those entries and add them to the DOM.
 [x] Figure out why i get Handlebars error on all other pages other than entries. How do I limit the JS in entries.js to just the entry show page?
     -this was an issue of page specific JS loading on all pages. To fix this I added "<%= javascript_include_tag params[:controller] %>" to application.html.erb in layouts folder. In config/initilaizers/assets.rb I had to add: "Rails.application.config.assets.precompile += %w( journals.js )" for every JS file i need loaded. I also had take out the "require_tree ." in application.js
-[x] the collection of user.entries seems to be returning all entries, at least when rendering all a users entries on their journal show page
-  -nevermind. i was looking at someone elses journal, but still logged in as myself, so it was showing current_users entries
+<!-- [x] the collection of user.entries seems to be returning all entries, at least when rendering all a users entries on their journal show page -->
+  <!-- -nevermind. i was looking at someone elses journal, but still logged in as myself, so it was showing current_users entries -->
 [] Create a delete route for activity_accounts on entries, and jQuerrify it
 [] Organize code in entry.js
 [x] Create README.md file
-[] Create a footer for the whole app
+[x] Create a footer for the whole app
+[] Even though i update the params in the view, i don't actually update the params data that gets sent, so when i scroll to next and then add an activity_account to an entry, it will be added to the entry that i was originally on.

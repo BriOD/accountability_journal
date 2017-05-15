@@ -16,7 +16,6 @@ Account.prototype.renderDiv = function(){
 }
 
 
-
 $(function(){
   $("[data-disable-with]").removeAttr("data-disable-with");
   // Rails 5 issue where it automatically locks the submit button. Had to override that.
@@ -43,7 +42,6 @@ $(function(){
       $completionField.val("")
       $durationField.val("")
       $notesField.val("")
-
     })
     .error(function(response){
       console.log("Broke?", response)
