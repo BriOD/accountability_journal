@@ -10,36 +10,34 @@ $(function(){
 
       $("#prev-entries").append(formattedEntry)
 
-        $(`#entry-${entry.id}-preview`).hover(function(e){
-          console.log(this)
-          let url = this.href
-          $(this).append(`<div class='preview-div'></div>`)
-          $.ajax({
-            method: "GET",
-            url: url
-           }).done(function(data){
-              let src = this.url
-              $(".preview-div").append(`<iframe src="${url}" width = "300px" height = "300px"></iframe>`)
-           })
-         }, function(e){
-           $(".preview-div").remove();
-         })
+      $(`#entry-${entry.id}-preview`).click(function(e){
+        e.preventDefault()
+        let url = this.href
+        $.ajax({
+          method: "GET",
+          url: url + ".json"
+        }).done(function(data){
+          $('.modal').html(`
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title center" id="exampleModalLongTitle">${data.date}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <iframe src="${url}" width = "550px" height = "450px"></iframe>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+            `)
+            $('.modal').modal('show')
+          })
+        })
+      })
     })
   })
-})
-
-  // $(document).on('mouseenter', ".entry-preview", function(e) {
-  //   let url = this.href
-  //  $(this).append("<div class='preview-div'></div>")
-  //   $.ajax({
-  //     method: "GET",
-  //     url: url
-  //   }).done(function(data){
-  //     let src = this.url
-  //     $(".preview-div").append(`<iframe src="${url}" width = "300px" height = "300px"></iframe>`)
-  //   })
-  // })
-  //
-  // $(document).on('mouseleave', ".entry-preview", function() {
-  //   $(".preview-div").remove();
-  // })
